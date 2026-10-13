@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Athrva Raut: B.Tech AI & ML student and sole developer of PackersMart. Case studies in backend engineering, plant-operations software and machine learning.">
+<meta name="author" content="Athrva Raut">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Athrva Raut">
+<meta property="og:description" content="Athrva Raut: B.Tech AI & ML student and sole developer of PackersMart. Case studies in backend engineering, plant-operations software and machine learning.">
+<meta property="og:url" content="https://athrvaraut.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e6b55'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EAR%3C/text%3E%3C/svg%3E">
+<style>html{color-scheme:light dark} body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<title>Athrva Raut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a sticky identity rail on the left, a single column of evidence on the right
+   (work, case studies, projects). Stacks into one column on phones. */
+:root {
+  --bg: #f3f4f1;
+  --surface: #fbfbf9;
+  --code-bg: #eceeea;
+  --ink: #121614;
+  --muted: #58605b;
+  --rule: #d6dad5;
+  --accent: #0e6b55;
+  --accent-ink: #0b5241;
+  --mark: #ffe27a;
+  --viz-before: #7fb8a6;
+  --viz-after: #0e6b55;
+
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --t-xs: 0.78rem;
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-md: 1.125rem;
+  --t-lg: 1.45rem;
+  --t-xl: 2rem;
+  --t-hero: clamp(2.2rem, 5.2vw, 3.5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1311;
+    --surface: #161b18;
+    --code-bg: #1c221f;
+    --ink: #e8ece9;
+    --muted: #9da7a1;
+    --rule: #29312d;
+    --accent: #4fc3a1;
+    --accent-ink: #6bd3b4;
+    --mark: #4a3d0a;
+    --viz-before: #2f6f5d;
+    --viz-after: #4fc3a1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1311;
+  --surface: #161b18;
+  --code-bg: #1c221f;
+  --ink: #e8ece9;
+  --muted: #9da7a1;
+  --rule: #29312d;
+  --accent: #4fc3a1;
+  --accent-ink: #6bd3b4;
+  --mark: #4a3d0a;
+  --viz-before: #2f6f5d;
+  --viz-after: #4fc3a1;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--t-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+mark {
+  color: inherit;
+  background: linear-gradient(transparent 52%, var(--mark) 52%);
+  padding: 0 0.1em;
+}
+
+/* ---------- frame ---------- */
+.frame {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-inline: 24px;
+  padding-block: 48px 64px;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 72px;
+}
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 48px); align-self: start; display: grid; gap: 28px; }
+.rail .name { font-family: var(--f-display); font-weight: 700; font-size: var(--t-lg); letter-spacing: -0.01em; }
+.rail .role { color: var(--muted); font-size: var(--t-sm); line-height: 1.5; margin-top: 4px; }
+.rail nav ol { list-style: none; display: grid; gap: 6px; font-size: var(--t-sm); }
+.rail nav a { color: var(--ink); text-decoration: none; display: inline-flex; gap: 10px; align-items: baseline; }
+.rail nav a span { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); }
+.rail nav a:hover { color: var(--accent-ink); }
+.rail .links { display: grid; gap: 6px; font-size: var(--t-sm); }
+.status {
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  color: var(--muted);
+}
+.status strong { color: var(--ink); font-weight: 600; display: block; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: 1px; }
+
+main { display: grid; gap: 96px; min-width: 0; }
+section { display: grid; gap: 28px; min-width: 0; scroll-margin-top: 32px; }
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-head { display: grid; gap: 8px; border-top: 2px solid var(--ink); padding-top: 14px; }
+.section-head h2 { font-size: var(--t-xl); letter-spacing: -0.015em; }
+.prose { max-width: 66ch; }
+.muted { color: var(--muted); }
+
+/* ---------- hero ---------- */
+.hero { display: grid; gap: 24px; }
+.hero h1 { font-size: var(--t-hero); font-weight: 700; letter-spacing: -0.025em; max-width: 19ch; }
+.hero .lede { font-size: var(--t-md); max-width: 60ch; color: var(--ink); }
+.proof { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-block: 1px solid var(--rule); }
+.proof li { padding: 18px 20px 18px 0; display: grid; gap: 4px; align-content: start; }
+.proof li + li { padding-left: 20px; border-left: 1px solid var(--rule); }
+.proof .big { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: var(--t-lg); font-weight: 500; letter-spacing: -0.02em; }
+.proof .what { font-size: var(--t-sm); color: var(--muted); line-height: 1.45; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 var(--t-sm) var(--f-body);
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+/* ---------- work ---------- */
+.jobs { list-style: none; display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
+.job:first-child { padding-top: 0; }
+.job .when { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.job h3 { font-size: var(--t-md); font-weight: 700; }
+.job .where { color: var(--muted); font-size: var(--t-sm); margin-top: 2px; }
+.job p.desc { margin-top: 10px; max-width: 62ch; }
+.job .more { margin-top: 8px; font-size: var(--t-sm); }
+
+/* ---------- case studies ---------- */
+.case { display: grid; gap: 28px; padding-bottom: 72px; border-bottom: 1px solid var(--rule); min-width: 0; }
+.case:last-child { border-bottom: 0; padding-bottom: 0; }
+.case-head { display: grid; gap: 10px; }
+.case-head h3 { font-size: clamp(1.6rem, 3.4vw, 2.25rem); letter-spacing: -0.02em; font-weight: 700; max-width: 22ch; }
+.case h4 { font-family: var(--f-mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; margin: 0 0 12px; }
+.case .lead { font-size: var(--t-md); max-width: 62ch; }
+
+
+.problems { display: grid; gap: 28px; }
+.problem { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; max-width: 70ch; }
+.problem h5 { font-family: var(--f-display); font-size: var(--t-md); font-weight: 700; margin: 0; }
+
+.facts { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: var(--t-sm); }
+.facts li { display: grid; gap: 0; }
+.facts .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: var(--t-md); font-weight: 500; }
+.facts .k { color: var(--muted); font-size: var(--t-xs); }
+
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font-family: var(--f-mono); font-size: var(--t-xs); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; color: var(--muted); background: var(--surface); }
+
+.case-foot { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; font-size: var(--t-sm); }
+.case-foot .note { color: var(--muted); }
+
+/* shift strip (Shalimar) */
+.shifts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.shifts div { padding: 12px 14px; display: grid; gap: 2px; }
+.shifts div + div { border-left: 1px solid var(--rule); }
+.shifts .s { font-family: var(--f-display); font-weight: 700; font-size: var(--t-md); }
+.shifts .t { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.checklist { list-style: none; display: grid; gap: 10px; max-width: 70ch; }
+.checklist li { padding-left: 18px; position: relative; }
+.checklist li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: var(--accent); }
+
+/* FER fixes table */
+.fixes-wrap { overflow-x: auto; }
+table.fixes { border-collapse: collapse; width: 100%; font-size: var(--t-sm); min-width: 560px; }
+table.fixes th { text-align: left; font-family: var(--f-mono); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; padding: 0 16px 8px 0; border-bottom: 1px solid var(--ink); }
+table.fixes td { padding: 10px 16px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.45; }
+table.fixes td:first-child { width: 50%; }
+
+/* chart */
+.viz { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 18px 12px; display: grid; gap: 10px; min-width: 0; }
+.viz-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.viz-title { font-weight: 600; font-size: var(--t-sm); }
+.legend { display: flex; gap: 16px; font-size: var(--t-xs); color: var(--muted); list-style: none; }
+.legend li { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.viz-svg-wrap { position: relative; overflow-x: auto; }
+.viz svg { display: block; width: 100%; min-width: 420px; height: auto; }
+.viz svg text { font-family: var(--f-body); }
+.tip {
+  position: absolute; pointer-events: none;
+  background: var(--ink); color: var(--bg);
+  font-size: var(--t-xs); line-height: 1.4;
+  padding: 6px 8px; border-radius: 4px;
+  white-space: nowrap; transform: translate(-50%, calc(-100% - 10px));
+}
+.viz details { font-size: var(--t-xs); color: var(--muted); }
+.viz details summary { cursor: pointer; }
+.viz details table { border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.viz details th, .viz details td { padding: 3px 14px 3px 0; text-align: left; border-bottom: 1px solid var(--rule); }
+
+/* ---------- projects ---------- */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+  min-width: 0;
+}
+.card h3 { font-size: var(--t-md); font-weight: 700; letter-spacing: -0.01em; }
+.card .kind { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); }
+.card p { font-size: var(--t-sm); line-height: 1.5; }
+.card .result { font-size: var(--t-sm); line-height: 1.5; border-top: 1px dashed var(--rule); padding-top: 10px; }
+.card .links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: var(--t-sm); padding-top: 4px; }
+.card .links .muted { font-size: var(--t-xs); }
+
+/* ---------- how I build ---------- */
+.method { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; counter-reset: m; }
+.method li { counter-increment: m; display: grid; gap: 6px; align-content: start; }
+.method li::before { content: counter(m); font-family: var(--f-mono); font-size: var(--t-xs); color: var(--accent-ink); border: 1px solid var(--accent); border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; }
+.method h3 { font-size: var(--t-md); font-weight: 700; }
+.method p { font-size: var(--t-sm); color: var(--muted); max-width: 46ch; }
+
+/* ---------- skills / education ---------- */
+.skills { display: grid; gap: 0; }
+.skills div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; padding-block: 12px; border-bottom: 1px solid var(--rule); font-size: var(--t-sm); }
+.skills dt { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 3px; }
+.skills dd { margin: 0; }
+
+/* ---------- contact ---------- */
+.contact { display: grid; gap: 18px; }
+.contact h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; max-width: 20ch; }
+.email-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.email { font-family: var(--f-mono); font-size: var(--t-md); user-select: all; }
+footer { font-size: var(--t-xs); color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px) {
+  .frame { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 28px 48px; }
+  .rail { position: static; gap: 18px; }
+  .rail nav ol { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .rail .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  main { gap: 72px; }
+}
+@media (max-width: 620px) {
+  .frame { padding-inline: 16px; }
+  .proof { grid-template-columns: minmax(0, 1fr); }
+  .proof li, .proof li + li { padding: 14px 0; border-left: 0; }
+  .proof li + li { border-top: 1px solid var(--rule); }
+  .job, .skills div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .grid, .method { grid-template-columns: minmax(0, 1fr); }
+  .shifts { grid-template-columns: minmax(0, 1fr); }
+  .shifts div + div { border-left: 0; border-top: 1px solid var(--rule); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .rail nav a { transition: color .15s, background-color .15s, border-color .15s; }
+}
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <aside class="rail" aria-label="Profile">
+    <div>
+      <div class="name">Athrva Raut</div>
+      <div class="role">B.Tech AI &amp; ML, Bharati Vidyapeeth<br>Navi Mumbai, India</div>
+    </div>
+    <nav aria-label="Sections">
+      <ol>
+        <li><a href="#work"><span>01</span>Work</a></li>
+        <li><a href="#case-studies"><span>02</span>Case studies</a></li>
+        <li><a href="#projects"><span>03</span>More projects</a></li>
+        <li><a href="#how-i-build"><span>04</span>How I build</a></li>
+        <li><a href="#skills"><span>05</span>Skills</a></li>
+        <li><a href="#contact"><span>06</span>Contact</a></li>
+      </ol>
+    </nav>
+    <div class="links">
+      <a href="Athrva_Raut_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a href="https://github.com/athrvaraut" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/athrva-raut-3a6ba228a/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="status">
+      <strong><span class="dot" aria-hidden="true"></span>Open to opportunities</strong>
+      Summer 2027 internships in software and ML engineering, and remote roles with startups.
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow">Software &amp; ML engineering · Class of 2028</div>
+      <h1 id="hero-title">I build software for real operations, and I measure it before I trust it.</h1>
+      <p class="lede">I'm the sole developer of <strong>PackersMart</strong>, an online marketplace for packers and movers in Mumbai, and I built the app that replaced handwritten boiler and power logbooks at a soya processing plant. I care about the parts that break quietly: race conditions, leaked test data, and numbers that look better than they are.</p>
+      <ul class="proof" aria-label="Highlights">
+        <li><span class="big">260+</span><span class="what">automated tests on PackersMart, plus browser tests at phone and desktop widths</span></li>
+        <li><span class="big">54% → 70%</span><span class="what">test accuracy on FER-2013 after finding leaked test images</span></li>
+        <li><span class="big">3 shifts</span><span class="what">a day logged from phones instead of paper at a working plant</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="#case-studies">Read the case studies</a>
+        <a class="btn" href="Athrva_Raut_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <span class="eyebrow">01</span>
+        <h2 id="work-title">Work</h2>
+      </div>
+      <ol class="jobs">
+        <li class="job">
+          <div class="when">Sep 2026 – present</div>
+          <div>
+            <h3>Full Stack Intern, Coders Technologies</h3>
+            <div class="where">Navi Mumbai · sole developer of PackersMart</div>
+            <p class="desc">PackersMart is an online marketplace connecting customers with packers-and-movers companies in the Mumbai region. I'm responsible for the backend, frontend, database and deployment, built with FastAPI, PostgreSQL and HTMX and covered by 260+ automated tests.</p>
+            <div class="more muted">Product details are confidential.</div>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Apr 2026 – Jul 2026</div>
+          <div>
+            <h3>Software Developer (part-time), Shalimar Nutrients</h3>
+            <div class="where">Remote · soya processing plant, Katol, Nagpur</div>
+            <p class="desc">Built the operations app for the boiler and power departments: shift log entry from phones, a dashboard for the head of department, and Excel reports generated in the plant's own formats.</p>
+            <div class="more"><a href="#shalimar">Read the Shalimar Ops case study</a></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== CASE STUDIES ===================== -->
+    <section id="case-studies" aria-labelledby="cases-title">
+      <div class="section-head">
+        <span class="eyebrow">02</span>
+        <h2 id="cases-title">Case studies</h2>
+      </div>
+
+      <!-- ---------- Shalimar ---------- -->
+      <article class="case" id="shalimar" aria-labelledby="sh-title">
+        <div class="case-head">
+          <span class="eyebrow">Shalimar Ops · Shalimar Nutrients · Apr – Jul 2026</span>
+          <h3 id="sh-title">Replacing a plant's handwritten logbooks</h3>
+          <p class="lead">Shalimar Nutrients processes soya near Nagpur. Its boiler and power departments run three shifts a day, every day of the year. Operators wrote readings into logbooks by hand, and the head of department retyped them into Excel at the end of each month.</p>
+        </div>
+
+        <div class="shifts" role="group" aria-label="Plant shifts">
+          <div><span class="s">Shift A</span><span class="t">07:00 – 15:00</span></div>
+          <div><span class="s">Shift B</span><span class="t">15:00 – 23:00</span></div>
+          <div><span class="s">Shift C</span><span class="t">23:00 – 07:00</span></div>
+        </div>
+
+        <div>
+          <h4>What I built</h4>
+          <ul class="checklist">
+            <li>Phone-friendly forms for 20+ boiler readings per entry: steam pressure and flow, drum level, bed and flue-gas temperatures, fan dampers, coal feed. Out-of-range values warn the operator, for example steam pressure below 6 or above 12 kg/cm².</li>
+            <li>One entry per shift slot, with an "Update entry" option for corrections. Each day's opening coal stock is carried over from the previous day's closing stock.</li>
+            <li>A power report by plant section in kWh, with power factor calculated as MSEDCL kWh ÷ kVAh, and the share saved by solar.</li>
+            <li>An Excel engine that produces the daily boiler report, the 14-column monthly coal report and the monthly power report, laid out exactly like the plant's existing sheets.</li>
+            <li>Three roles (operator, assistant, head of department) with JWT login.</li>
+          </ul>
+        </div>
+
+        <div class="problem">
+          <h5>What I learned</h5>
+          <p>Most of the project's 104 commits are fixes to the Excel output: merged cells that corrupted files, formulas, column widths and colours that had to match the paper format. People adopt a tool when its output looks like what they already trust. Matching their format mattered more than any new feature.</p>
+        </div>
+
+        <ul class="chips" aria-label="Stack">
+          <li>React</li><li>TypeScript</li><li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL (Supabase)</li><li>openpyxl</li><li>JWT</li><li>Vercel</li><li>Render</li>
+        </ul>
+
+        <div class="case-foot">
+          <a href="https://github.com/athrvaraut/shalimar-ops" target="_blank" rel="noopener">Code on GitHub</a>
+        </div>
+      </article>
+
+      <!-- ---------- FER ---------- -->
+      <article class="case" id="fer" aria-labelledby="fer-title">
+        <div class="case-head">
+          <span class="eyebrow">Facial Expression Recognition · ML course project · Oct 2026</span>
+          <h3 id="fer-title">Finding out why a model scored 54%</h3>
+          <p class="lead">The project recognises seven facial expressions from a webcam in real time. Version 1 scored 54.05% on the FER-2013 test set. Before changing anything, I measured where it was failing. Every change in version 2 fixes one measured problem.</p>
+        </div>
+
+        <div class="fixes-wrap">
+          <table class="fixes">
+            <thead><tr><th>Measured problem in version 1</th><th>Fix in version 2</th></tr></thead>
+            <tbody>
+              <tr><td>568 of the 7,178 test images (7.9%) also appeared in training, and the test set doubled as the validation set.</td><td>Official split: train, PublicTest for validation, PrivateTest used once. 1,798 duplicate, blank, conflicting or leaked training images removed.</td></tr>
+              <tr><td>Webcam faces were histogram-equalised but training images were not. Cost: 4.3 accuracy points.</td><td>One preprocessing function shared by training and the live app, guarded by a unit test.</td></tr>
+              <tr><td>Heavy augmentation left the model underfitting: 55.2% even on its own training images.</td><td>Moderate augmentation plus grey cutout for partly covered faces.</td></tr>
+              <tr><td>"Disgust" was recognised 0% of the time.</td><td>Square-root class weights, and macro-F1 reported next to accuracy.</td></tr>
+              <tr><td>The Haar face detector found 72.9% of faces.</td><td>YuNet detector: 96.7%, with eye alignment.</td></tr>
+              <tr><td>About 80 ms per face.</td><td>Compiled inference: about 10 ms per face, about 29 FPS live.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="viz" id="fer-viz" style="margin:0">
+          <div class="viz-head">
+            <figcaption class="viz-title">Recall per emotion, FER-2013 PrivateTest (3,589 images)</figcaption>
+            <ul class="legend" aria-hidden="true">
+              <li><i style="background: var(--viz-before)"></i>Version 1</li>
+              <li><i style="background: var(--viz-after)"></i>Version 2</li>
+            </ul>
+          </div>
+          <div class="viz-svg-wrap" id="fer-chart"></div>
+          <details>
+            <summary>Show as a table</summary>
+            <table id="fer-table"><thead><tr><th>Emotion</th><th>Version 1</th><th>Version 2</th></tr></thead><tbody></tbody></table>
+          </details>
+        </figure>
+
+        <ul class="facts" aria-label="FER results">
+          <li><span class="v">54.05% → 69.96%</span><span class="k">test accuracy</span></li>
+          <li><span class="v">0.43 → 0.68</span><span class="k">macro-F1</span></li>
+          <li><span class="v">72.9% → 96.7%</span><span class="k">faces found</span></li>
+        </ul>
+
+        <ul class="chips" aria-label="Stack">
+          <li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>YuNet</li><li>pytest</li><li>Google Colab</li>
+        </ul>
+
+        <div class="case-foot">
+          <a href="https://github.com/athrvaraut/facial-expression-recognizer" target="_blank" rel="noopener">Code, results and report on GitHub</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" aria-labelledby="proj-title">
+      <div class="section-head">
+        <span class="eyebrow">03</span>
+        <h2 id="proj-title">More projects</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="kind">Fraud detection · Apr – May 2026</span>
+          <h3>GasSetu</h3>
+          <p>Checks every LPG cylinder booking in five layers before dispatch: GSTIN format and state, a live GSTN lookup, name matching, an Isolation Forest anomaly model, and a hash-chained delivery log.</p>
+          <p class="result"><span class="num">94.2%</span> detection at <span class="num">8.3%</span> false positives on 10,000 synthetic records.</p>
+          <div class="links">
+            <a href="https://github.com/athrvaraut/gas_setu" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://gas-setu.onrender.com/" target="_blank" rel="noopener">Live API</a>
+            <span class="muted">wakes in about a minute</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="kind">Quant · Mar 2026 – present</span>
+          <h3>NSE trading engine</h3>
+          <p>Paper-trades 113 NSE stocks around the clock on AWS EC2: ATR-based position sizing, idempotent orders, broker rate limits and Telegram alerts.</p>
+          <p class="result">Out-of-sample testing caught overfitting: profit factor <span class="num">1.01</span> in-sample fell to <span class="num">0.87</span> on unseen years.</p>
+          <div class="links">
+            <span class="muted">Private repository</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="kind">Kaggle · Aug 2026</span>
+          <h3>Knee MRI abnormality detection</h3>
+          <p>Only 58 studies had expert labels, so local LLMs (Qwen 2.5 7B, Gemma 3 4B) read the radiology reports to label 12 abnormalities. I audited their labels against the expert set and rewrote the prompt after finding a systematic bias.</p>
+          <p class="result">5-fold CNN ensemble (EfficientNet, ConvNeXt, ResNet-50). Public leaderboard <span class="num">0.860</span>.</p>
+          <div class="links">
+            <span class="muted">RSNA competition on Kaggle</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="kind">Agent · Jul – Aug 2026</span>
+          <h3>TradeOps Agent</h3>
+          <p>A chat bot for the trading engine. From Telegram or Slack I can check status, P&amp;L and positions, or pause trading in an emergency, without logging in to the server.</p>
+          <p class="result">One message handler serves both platforms through the Caspian SDK.</p>
+          <div class="links">
+            <a href="https://github.com/athrvaraut/caspian-tradeops-agent" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="kind">LLM agent · Aug 2026</span>
+          <h3>Broadcast Ops Agent</h3>
+          <p>An LLM agent (Gemini) that triages incidents during a live-stream event. A simulator exports quality and delivery metrics to Prometheus and Grafana; injected faults degrade them, and the agent works through a fixed runbook to diagnose and fix each one.</p>
+          <p class="result">Five fault classes, each with its own metric fingerprint. Every diagnosis cites the metrics behind it.</p>
+          <div class="links">
+            <a href="https://github.com/athrvaraut/broadcast-ops-agent" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="kind">Algorithms · Mar 2026</span>
+          <h3>Pathfinder 3D</h3>
+          <p>Races Dijkstra, A*, BFS, bidirectional search and D* Lite side by side on a 3D grid, timing each one. It also routes between real cities with a TSP solver and caches repeated routes.</p>
+          <p class="result">Same algorithms from a small maze up to Mumbai to New York.</p>
+          <div class="links">
+            <a href="https://github.com/athrvaraut/pathfinder-3d" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://pathfinder-3d.onrender.com/" target="_blank" rel="noopener">Live demo</a>
+            <span class="muted">wakes in about a minute</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== HOW I BUILD ===================== -->
+    <section id="how-i-build" aria-labelledby="build-title">
+      <div class="section-head">
+        <span class="eyebrow">04</span>
+        <h2 id="build-title">How I build</h2>
+      </div>
+      <p class="prose">I build with AI coding agents, mainly Claude Code, and I run them the way a lead runs a small team. The agent writes most of the code. I decide what gets built, how it should behave, and whether it is done.</p>
+      <ol class="method">
+        <li>
+          <h3>Spec first</h3>
+          <p>Before any code, I write down what the system must do, with every rule marked decided, proposed or open. The agent builds from decisions, not guesses.</p>
+        </li>
+        <li>
+          <h3>Small phases</h3>
+          <p>Each phase is one task and one commit, reviewed before the next one starts. Small diffs are where I catch mistakes.</p>
+        </li>
+        <li>
+          <h3>Tests decide when it's done</h3>
+          <p>A phase is finished when its tests pass and have actually been run, not when the code looks right.</p>
+        </li>
+        <li>
+          <h3>Measure before claiming</h3>
+          <p>Numbers come from runs, not estimates. That habit found the leaked test images in the FER project and the overfit strategy in the trading engine.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="section-head">
+        <span class="eyebrow">05</span>
+        <h2 id="skills-title">Skills and education</h2>
+      </div>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Python, SQL, TypeScript, JavaScript</dd></div>
+        <div><dt>Web</dt><dd>FastAPI, SQLAlchemy, Alembic, Pydantic, PostgreSQL, REST APIs, JWT, HTMX, React, Tailwind CSS</dd></div>
+        <div><dt>Machine learning</dt><dd>PyTorch, TensorFlow and Keras, scikit-learn, OpenCV, pandas, NumPy, local LLMs (Qwen, Gemma, Llama)</dd></div>
+        <div><dt>Infrastructure</dt><dd>Docker, Linux servers, Caddy, AWS EC2, Supabase, Vercel, Render, Prometheus, Grafana</dd></div>
+        <div><dt>Testing &amp; tools</dt><dd>pytest, Playwright, Git, Claude Code</dd></div>
+        <div><dt>Education</dt><dd>B.Tech, Artificial Intelligence &amp; Machine Learning, Bharati Vidyapeeth (Deemed to be University), Navi Mumbai. 2024 – 2028.</dd></div>
+        <div><dt>Certification</dt><dd>Machine Learning Specialization, DeepLearning.AI and Stanford (Coursera), 2026</dd></div>
+      </dl>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="section-head">
+        <span class="eyebrow">06</span>
+      </div>
+      <h2 id="contact-title">Hiring for a 2027 internship, or building something that needs to ship?</h2>
+      <p class="prose muted">Email is the fastest way to reach me.</p>
+      <div class="email-row">
+        <span class="email" id="email">athrva33@gmail.com</span>
+        <button class="btn" type="button" id="copy-email">Copy email</button>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://www.linkedin.com/in/athrva-raut-3a6ba228a/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/athrvaraut" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="Athrva_Raut_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+      <footer>Athrva Raut · Navi Mumbai, India · Updated October 2026</footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  /* ---------- copy email ---------- */
+  var btn = document.getElementById('copy-email');
+  var email = document.getElementById('email');
+  function selectEmail() {
+    var range = document.createRange();
+    range.selectNodeContents(email);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  btn.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    var done = function (label) {
+      btn.textContent = label;
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+    };
+    try {
+      navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { selectEmail(); done('Selected, press Ctrl+C'); });
+    } catch (e) { selectEmail(); done('Selected, press Ctrl+C'); }
+  });
+
+  /* ---------- FER dumbbell chart: recall per emotion, v1 -> v2 ---------- */
+  var data = [
+    { e: 'Angry',    v1: 35.6, v2: 65.0 },
+    { e: 'Disgust',  v1: 0.0,  v2: 63.6 },
+    { e: 'Fear',     v1: 15.7, v2: 47.2 },
+    { e: 'Happy',    v1: 85.8, v2: 88.6 },
+    { e: 'Neutral',  v1: 60.5, v2: 77.0 },
+    { e: 'Sad',      v1: 38.9, v2: 53.2 },
+    { e: 'Surprise', v1: 76.4, v2: 79.6 }
+  ];
+
+  var tbody = document.querySelector('#fer-table tbody');
+  data.forEach(function (d) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + d.e + '</td><td>' + d.v1.toFixed(1) + '%</td><td>' + d.v2.toFixed(1) + '%</td>';
+    tbody.appendChild(tr);
+  });
+
+  var wrap = document.getElementById('fer-chart');
+  var W = 680, rowH = 36, top = 28, bottom = 30, left = 84, right = 64;
+  var H = top + rowH * data.length + bottom;
+  var plotW = W - left - right;
+  function x(v) { return left + (v / 100) * plotW; }
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(name, attrs, text) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Dumbbell chart of recall per emotion. Version 2 is higher than version 1 for all seven emotions; the largest gain is disgust, from 0% to 64%.' });
+
+  // grid + axis labels
+  [0, 25, 50, 75, 100].forEach(function (t) {
+    svg.appendChild(el('line', { x1: x(t), x2: x(t), y1: top - 8, y2: H - bottom + 4, stroke: 'var(--rule)', 'stroke-width': 1 }));
+    svg.appendChild(el('text', { x: x(t), y: H - 10, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)' }, t + '%'));
+  });
+  svg.appendChild(el('text', { x: W - right + 12, y: top - 12, 'font-size': 11, fill: 'var(--muted)' }, 'Gain'));
+
+  var tip = document.createElement('div');
+  tip.className = 'tip';
+  tip.hidden = true;
+  wrap.appendChild(tip);
+  function showTip(evt, text, cx, cy) {
+    var r = svg.getBoundingClientRect();
+    var scale = r.width / W;
+    tip.textContent = text;
+    tip.hidden = false;
+    var half = tip.offsetWidth / 2 + 4;
+    var px = Math.min(Math.max(cx * scale, half), r.width - half);
+    tip.style.left = px + 'px';
+    tip.style.top = (cy * scale) + 'px';
+  }
+  function hideTip() { tip.hidden = true; }
+
+  data.forEach(function (d, i) {
+    var cy = top + rowH * i + rowH / 2;
+    svg.appendChild(el('text', { x: left - 14, y: cy + 4, 'text-anchor': 'end', 'font-size': 13, fill: 'var(--ink)' }, d.e));
+    svg.appendChild(el('line', { x1: x(d.v1), x2: x(d.v2), y1: cy, y2: cy, stroke: 'var(--muted)', 'stroke-opacity': 0.45, 'stroke-width': 2, 'stroke-linecap': 'round' }));
+
+    [['v1', 'Version 1', 'var(--viz-before)'], ['v2', 'Version 2', 'var(--viz-after)']].forEach(function (s) {
+      var cx = x(d[s[0]]);
+      svg.appendChild(el('circle', { cx: cx, cy: cy, r: 6, fill: s[2], stroke: 'var(--surface)', 'stroke-width': 2 }));
+      var hit = el('circle', { cx: cx, cy: cy, r: 13, fill: 'transparent', tabindex: 0, 'aria-label': d.e + ', ' + s[1] + ': ' + d[s[0]].toFixed(1) + '% recall' });
+      hit.style.cursor = 'default';
+      var label = d.e + ' · ' + s[1] + ': ' + d[s[0]].toFixed(1) + '%';
+      hit.addEventListener('mouseenter', function (evt) { showTip(evt, label, cx, cy); });
+      hit.addEventListener('focus', function (evt) { showTip(evt, label, cx, cy); });
+      hit.addEventListener('mouseleave', hideTip);
+      hit.addEventListener('blur', hideTip);
+      svg.appendChild(hit);
+    });
+
+    // direct series labels on the first row only
+    if (i === 0) {
+      svg.appendChild(el('text', { x: x(d.v1), y: cy - 12, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'var(--muted)' }, 'v1'));
+      svg.appendChild(el('text', { x: x(d.v2), y: cy - 12, 'text-anchor': 'middle', 'font-size': 10.5, fill: 'var(--muted)' }, 'v2'));
+    }
+    var gain = Math.round(d.v2 - d.v1);
+    svg.appendChild(el('text', { x: W - right + 12, y: cy + 4, 'font-size': 12, fill: 'var(--muted)', 'font-family': 'IBM Plex Mono, ui-monospace, monospace' }, '+' + gain));
+  });
+
+  wrap.appendChild(svg);
+})();
+</script>
+</body>
+</html>
