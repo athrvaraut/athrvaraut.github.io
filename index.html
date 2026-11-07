@@ -483,8 +483,8 @@ footer { font-size: var(--t-xs); color: var(--muted); border-top: 1px solid var(
         <article class="card">
           <span class="kind">Fraud detection · Apr – May 2026</span>
           <h3>GasSetu</h3>
-          <p>Checks every LPG cylinder booking in five layers before dispatch: GSTIN format and state, a live GSTN lookup, name matching, an Isolation Forest anomaly model, and a hash-chained delivery log.</p>
-          <p class="result"><span class="num">94.2%</span> detection at <span class="num">8.3%</span> false positives on 10,000 synthetic records.</p>
+          <p>Checks every LPG cylinder booking before dispatch: GSTIN format and state, a live GSTN lookup, name matching and an Isolation Forest anomaly model. A hash-chained delivery log is built and tested but not yet wired into the API.</p>
+          <p class="result"><span class="num">94.2%</span> accuracy (F1 <span class="num">0.85</span>) on 10,000 synthetic records. Simple baselines score 100% on the same data, so the real test is real data.</p>
           <div class="links">
             <a href="https://github.com/athrvaraut/gas_setu" target="_blank" rel="noopener">GitHub</a>
             <a href="https://gas-setu.onrender.com/" target="_blank" rel="noopener">Live API</a>
@@ -506,7 +506,7 @@ footer { font-size: var(--t-xs); color: var(--muted); border-top: 1px solid var(
           <span class="kind">Kaggle · Aug 2026</span>
           <h3>Knee MRI abnormality detection</h3>
           <p>Only 58 studies had expert labels, so local LLMs (Qwen 2.5 7B, Gemma 3 4B) read the radiology reports to label 12 abnormalities. I audited their labels against the expert set and rewrote the prompt after finding a systematic bias.</p>
-          <p class="result">5-fold CNN ensemble (EfficientNet, ConvNeXt, ResNet-50). Public leaderboard <span class="num">0.860</span>.</p>
+          <p class="result">5-fold CNN ensemble (EfficientNet, ConvNeXt, ResNet-50). Our own model: <span class="num">0.853</span> on the private leaderboard (<span class="num">0.871</span> public). Team of two.</p>
           <div class="links">
             <span class="muted">RSNA competition on Kaggle</span>
           </div>
